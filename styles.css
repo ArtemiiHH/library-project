@@ -24,6 +24,43 @@ body {
     justify-content: center;
 }
 
+#modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    height: 400px;
+    width: auto;
+    background-color: var(--color-sec);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.input-group label{
+    display: block;
+}
+
+.modal-btns {
+    display: flex;
+}
+
+.add-book-btn {
+    align-self: start;
+}
+
+.cancel-btn {
+    align-self: end;
+}
+
 .book-grid {
     display: flex;
     flex-wrap: wrap;
