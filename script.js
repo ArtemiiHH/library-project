@@ -22,9 +22,7 @@ const cardTitle = document.querySelector('.card-title');
 const cardUndertext = document.querySelector('.card-undertext');
 const cardPages = document.querySelector('.card-pages');
 // Card grid
-const cardGrid = document.querySelector('.book-grid');
-// New card
-const newCard = document.querySelector('.card');
+const cardGrid = document.querySelector('.card-grid');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
@@ -62,8 +60,13 @@ addBtn.addEventListener('click', () => {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
-        addBookToLibrary();
-        cardGrid += newCard;
+        bookInput.value = this.title;
+        authorInput.value = this.author;
+        numberInput.value = this.pages;
+        const newBook = new Book(title, author, pages);
+        const newCard = document.createElement('card');
+        newCard = newBook;
+        cardGrid.appendChild(newCard);
     }
 });
 

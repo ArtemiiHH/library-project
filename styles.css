@@ -56,7 +56,7 @@ body {
 }
 
 /* Cards grid */
-.book-grid {
+.card-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
