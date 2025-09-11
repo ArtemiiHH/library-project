@@ -1,4 +1,6 @@
-const myLibrary = [];
+const myLibrary = ['book1', 'book2'];
+
+const addBtn = document.querySelector('.add-btn');
 
 function Book(title, author, pages, hasRead) {
     this.id = crypto.randomUUID();
