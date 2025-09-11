@@ -3,7 +3,6 @@ const myLibrary = ['book1', 'book2'];
 const addBtn = document.querySelector('.add-btn');
 const modal = document.querySelector('#modal-container');
 modal.classList.add('hidden');
-console.log(modal);
 
 function Book(title, author, pages, hasRead) {
     this.id = crypto.randomUUID();
