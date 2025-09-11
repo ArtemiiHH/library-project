@@ -1,9 +1,17 @@
 const myLibrary = ['book1', 'book2'];
 
-const addBtn = document.querySelector('.add-btn');
+// DOM elements
+// Add a new book button
+const addNewBookBtn = document.querySelector('.add-new-btn');
+// Modal container
 const modal = document.querySelector('#modal-container');
+// Class to hide modal
 modal.classList.add('hidden');
+// X button
 const exitBtn = document.querySelector('.x-btn');
+// Add book button (Modal)
+const addBtn = document.querySelector('.add-btn');
+// Cancel button
 const calcelBtn = document.querySelector('.close-btn');
 
 function Book(title, author, pages, hasRead) {
@@ -21,14 +29,19 @@ function addBookToLibrary(title, author, pages, hasRead) {
 };
 
 
-// open modal when Add button pressed
-addBtn.addEventListener('click', () => {
+// Open modal when Add button pressed
+addNewBookBtn.addEventListener('click', () => {
     modal.classList.remove('hidden');
 });
 
 // Close modal when X pressed
 exitBtn.addEventListener('click', () => {
     modal.classList.toggle('hidden');
+});
+
+// Add book button (Modal)
+addBtn.addEventListener('click', () => {
+    
 });
 
 // Close modal when Close pressed

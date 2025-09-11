@@ -29,7 +29,7 @@ body {
 }
 
 /* Add a new book button */
-.add-btn {
+.add-new-btn {
   padding: 16px 32px;
   background-color: var(--color-btn);
   border: none;
@@ -39,7 +39,7 @@ body {
   font-weight: 600;
 }
 
-.add-btn:hover {
+.add-new-btn:hover {
   padding: 16px 32px;
   background-color: var(--color-btn);
   border: none;
@@ -151,7 +151,7 @@ input {
   align-items: center;
 }
 
-.add-book-btn,
+.add-btn,
 .cancel-btn {
   padding: 16px 32px;
   background-color: var(--color-btn);
@@ -161,7 +161,7 @@ input {
   font-size: 1.1rem;
 }
 
-.add-book-btn:hover,
+.add-btn:hover,
 .cancel-btn:hover {
   padding: 16px 32px;
   background-color: var(--color-btn);
