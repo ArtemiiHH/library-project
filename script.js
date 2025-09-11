@@ -13,6 +13,8 @@ const exitBtn = document.querySelector('.x-btn');
 const addBtn = document.querySelector('.add-btn');
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
+// Inputs
+const input = document.querySelector('.input-group');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
@@ -42,9 +44,9 @@ exitBtn.addEventListener('click', () => {
 });
 
 // Add book button (Modal)
-// addBtn.addEventListener('click', () => {
-
-// });
+addBtn.addEventListener('click', () => {
+    addBookToLibrary();
+});
 
 // Close modal when Close pressed
 calcelBtn.addEventListener('click', () => {
