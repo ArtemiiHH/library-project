@@ -16,7 +16,11 @@ const calcelBtn = document.querySelector('.close-btn');
 // Inputs
 const bookInput = document.querySelector('.book-input');
 const authorInput = document.querySelector('.author-input');
-const numberInput = document,querySelector('.number-input');
+const numberInput = document.querySelector('.number-input');
+// Card info
+const cardTitle = document.querySelector('.card-title');
+const cardUndertext = document.querySelector('.card-undertext');
+const cardPages = document.querySelector('.card-pages');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
@@ -29,7 +33,9 @@ function Book(title, author, pages, hasRead) {
 
 // Add book to library function
 function addBookToLibrary(title, author, pages, hasRead) {
-    
+    bookInput.value = this.title;
+    authorInput.value = this.author;
+    numberInput.value = this.pages;
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
     return myLibrary;
@@ -48,7 +54,12 @@ exitBtn.addEventListener('click', () => {
 
 // Add book button (Modal)
 addBtn.addEventListener('click', () => {
-    addBookToLibrary();
+    if (bookInput.value === '' || authorInput.value === '' || numberInput.value === '') {
+        alert('Enter your book information');
+        modal.classList.remove('hidden');
+    } else {
+        
+    }
 });
 
 // Close modal when Close pressed
