@@ -10,3 +10,23 @@ body {
     background-color: var(--color-bg);
     color: var(--color-txt);
 }
+
+#container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--color-sec);
+    height: 200px;
+    width: 300px;
+}
