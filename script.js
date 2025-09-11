@@ -14,6 +14,7 @@ const addBtn = document.querySelector('.add-btn');
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
 
+// Book constructor function
 function Book(title, author, pages, hasRead) {
     this.id = crypto.randomUUID();
     this.title = title;
@@ -22,6 +23,7 @@ function Book(title, author, pages, hasRead) {
     this.hasRead = hasRead;
 };
 
+// Add book to library function
 function addBookToLibrary(title, author, pages, hasRead) {
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
@@ -40,9 +42,9 @@ exitBtn.addEventListener('click', () => {
 });
 
 // Add book button (Modal)
-addBtn.addEventListener('click', () => {
-    
-});
+// addBtn.addEventListener('click', () => {
+
+// });
 
 // Close modal when Close pressed
 calcelBtn.addEventListener('click', () => {
