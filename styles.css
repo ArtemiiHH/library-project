@@ -54,6 +54,18 @@ body {
   cursor: pointer;
 }
 
+#modal-container span:hover {
+  display: grid;
+  justify-self: end;
+  width: 50px;
+  height: auto;
+  padding: 10px 10px;
+  font-size: 3rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 span {
   display: grid;
   place-items: center;
