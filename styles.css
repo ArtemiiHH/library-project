@@ -6,7 +6,7 @@
   /* Colors */
   --color-bg: #070f2b;
   --color-sec: #1b1a55;
-  --color-btn: #FF6500;
+  --color-btn: #ff6500;
   --color-txt: white;
   /* Fonts */
   font-family: "Roboto", sans-serif, system-ui, -apple-system,
@@ -27,6 +27,28 @@ body {
   justify-content: center;
 }
 
+/* Add a new book button */
+.add-btn {
+  padding: 16px 32px;
+  background-color: var(--color-btn);
+  border: none;
+  border-radius: 30px;
+  color: var(--color-txt);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  padding: 16px 32px;
+  background-color: var(--color-btn);
+  border: none;
+  border-radius: 30px;
+  color: var(--color-txt);
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
 /* Modal */
 #modal-container {
   display: grid;
@@ -43,6 +65,7 @@ body {
   display: none;
 }
 
+/* X button */
 #modal-container span {
   display: grid;
   justify-self: end;
