@@ -37,6 +37,7 @@ body {
   color: var(--color-txt);
   font-size: 1.2rem;
   font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
 }
 
 .add-new-btn:hover {
@@ -48,6 +49,7 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   opacity: 0.7;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
 }
 
 /* Cards */
@@ -62,6 +64,7 @@ body {
   background-color: var(--color-sec);
   height: 200px;
   width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
 }
 
 /* Modal */
@@ -118,6 +121,7 @@ span {
   padding: 40px;
   justify-self: center;
   align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
 }
 
 form {
@@ -159,6 +163,7 @@ input {
   border-radius: 30px;
   color: var(--color-txt);
   font-size: 1.1rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
 }
 
 .add-btn:hover,
@@ -170,4 +175,5 @@ input {
   color: var(--color-txt);
   font-size: 1.1rem;
   opacity: 0.7;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
 }
