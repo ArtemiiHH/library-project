@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, hasRead) {
     this.id = crypto.randomUUID();
