@@ -1,0 +1,12 @@
+:root {
+    /* Colors */
+    --color-bg: #070F2B;
+    --color-sec: #1B1A55;
+    --color-btn: #9290C3;
+    --color-txt: white;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-txt);
+}
