@@ -1,6 +1,8 @@
 /* Import Roboto font */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+
+/* General */
 :root {
   /* Colors */
   --color-bg: #070f2b;
@@ -26,6 +28,7 @@ body {
   justify-content: center;
 }
 
+/* Modal */
 #modal-container {
   display: flex;
   justify-content: center;
@@ -35,7 +38,8 @@ body {
 .modal-box {
   height: 400px;
   width: auto;
-  background-color: var(--color-sec);
+  background-color: var(--color-txt);
+  color: black;
   border-radius: 20px;
   padding: 40px;
 }
@@ -46,10 +50,23 @@ form {
   row-gap: 30px;
 }
 
+/* Inputs */
 .input-group label {
   display: block;
+  font-weight: 600;
+  font-style: italic;
 }
 
+input {
+    height: 40px;
+    width: 300px;
+    border: solid 4px grey;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+}
+
+/* Modal buttons */
 .modal-btns {
   display: grid;
   grid-template-columns: 1fr 1fr;
