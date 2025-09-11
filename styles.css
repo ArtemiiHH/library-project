@@ -6,7 +6,7 @@
   /* Colors */
   --color-bg: #070f2b;
   --color-sec: #1b1a55;
-  --color-btn: #9290c3;
+  --color-btn: #FF6500;
   --color-txt: white;
   /* Fonts */
   font-family: "Roboto", sans-serif, system-ui, -apple-system,
@@ -121,6 +121,17 @@ input {
   border-radius: 30px;
   color: var(--color-txt);
   font-size: 1.1rem;
+}
+
+.add-book-btn:hover,
+.cancel-btn:hover {
+  padding: 16px 32px;
+  background-color: var(--color-btn);
+  border: none;
+  border-radius: 30px;
+  color: var(--color-txt);
+  font-size: 1.1rem;
+  opacity: 0.7;
 }
 
 .book-grid {
