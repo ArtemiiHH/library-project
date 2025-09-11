@@ -14,7 +14,9 @@ const addBtn = document.querySelector('.add-btn');
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
 // Inputs
-const input = document.querySelector('.input-group');
+const bookInput = document.querySelector('.book-input');
+const authorInput = document.querySelector('.author-input');
+const numberInput = document,querySelector('.number-input');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
@@ -27,6 +29,7 @@ function Book(title, author, pages, hasRead) {
 
 // Add book to library function
 function addBookToLibrary(title, author, pages, hasRead) {
+    
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
     return myLibrary;
