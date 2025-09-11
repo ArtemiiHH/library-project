@@ -1,6 +1,9 @@
 const myLibrary = ['book1', 'book2'];
 
 const addBtn = document.querySelector('.add-btn');
+const modal = document.querySelector('#modal-container');
+modal.classList.add('hidden');
+console.log(modal);
 
 function Book(title, author, pages, hasRead) {
     this.id = crypto.randomUUID();
@@ -12,6 +15,12 @@ function Book(title, author, pages, hasRead) {
 
 function addBookToLibrary(title, author, pages, hasRead) {
     const newBook = new Book(title, author, pages, hasRead);
-    newBook.push(myLibrary);
-    console.log(myLibrary());
+    myLibrary.push(newBook);
+    console.log(myLibrary);
 };
+
+
+
+addBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+});

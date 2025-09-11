@@ -35,8 +35,8 @@ body {
   background-color: black;
 }
 
-.hidden {
-    display: none !important;
+#modal-container.hidden {
+    display: none;
 }
 
 .modal-box {
