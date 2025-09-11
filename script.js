@@ -21,6 +21,10 @@ const numberInput = document.querySelector('.number-input');
 const cardTitle = document.querySelector('.card-title');
 const cardUndertext = document.querySelector('.card-undertext');
 const cardPages = document.querySelector('.card-pages');
+// Card grid
+const cardGrid = document.querySelector('.book-grid');
+// New card
+const newCard = document.querySelector('.card');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
@@ -58,7 +62,8 @@ addBtn.addEventListener('click', () => {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
-        
+        addBookToLibrary();
+        cardGrid += newCard;
     }
 });
 
