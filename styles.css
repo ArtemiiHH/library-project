@@ -36,7 +36,7 @@ body {
 }
 
 .modal-box {
-  height: 400px;
+  height: auto;
   width: auto;
   background-color: var(--color-txt);
   color: black;
@@ -47,7 +47,8 @@ body {
 form {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
-  row-gap: 30px;
+  row-gap: 50px;
+  height: auto;
 }
 
 /* Inputs */
@@ -70,7 +71,18 @@ input {
 .modal-btns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
+  align-items: center;
+}
+
+.add-book-btn,
+.cancel-btn {
+    padding: 16px 32px;
+    background-color: var(--color-btn);
+    border: none;
+    border-radius: 30px;
+    color: var(--color-txt);
+    font-size: 1.1rem;
 }
 
 .book-grid {
