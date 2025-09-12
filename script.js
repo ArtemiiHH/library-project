@@ -63,20 +63,18 @@ addBtn.addEventListener('click', (e) => {
         // Hide modal after 'Add book' pressed
         modal.classList.toggle('hidden');
 
-        // Create new book
+        // Create new book Constructor
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
+
         // Create new card
         const newCard = document.createElement('div');
         newCard.classList.add('card');
-
         const newTitle = document.createElement('h2');
         newTitle.classList.add('card-title');
         newTitle.textContent = newBook.title;
-
         const newAuthor = document.createElement('h3');
         newAuthor.classList.add('card-undertext');
         newAuthor.textContent = newBook.author;
-
         const newPages = document.createElement('p');
         newPages.classList.add('card-pages');
         newPages.textContent = `${newBook.pages} pages`;
@@ -98,14 +96,19 @@ addBtn.addEventListener('click', (e) => {
         newCard.append(newTitle, newAuthor, newPages);
         newCard.appendChild(newBtnGrid);
         newBtnGrid.append(newReadBtn, newRemoveBtn);
+
+        // Remove button
+        newRemoveBtn.addEventListener('click', () => {
+            newCard.remove();
+        });
     }
 });
 
-// Remove book button
-removeBtn.addEventListener('click', () => {
-    const removedCard = document.querySelector('.card');
-    removedCard.remove();
-});
+// // Remove book button
+// removeBtn.addEventListener('click', () => {
+//     const removedCard = document.querySelector('.card');
+//     removedCard.remove();
+// });
 
 // Close modal when Close pressed
 calcelBtn.addEventListener('click', () => {
