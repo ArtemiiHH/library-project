@@ -97,18 +97,18 @@ addBtn.addEventListener('click', (e) => {
         newCard.appendChild(newBtnGrid);
         newBtnGrid.append(newReadBtn, newRemoveBtn);
 
-        // Remove button
+        // Remove button on new cards
         newRemoveBtn.addEventListener('click', () => {
             newCard.remove();
         });
     }
 });
 
-// // Remove book button
-// removeBtn.addEventListener('click', () => {
-//     const removedCard = document.querySelector('.card');
-//     removedCard.remove();
-// });
+// Remove book button
+cardGrid.addEventListener('click', () => {
+    const removedCard = document.querySelector('.card');
+    removedCard.remove();
+});
 
 // Close modal when Close pressed
 calcelBtn.addEventListener('click', () => {
