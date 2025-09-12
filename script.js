@@ -3,20 +3,32 @@ const myLibrary = ['book1', 'book2'];
 // DOM elements
 // Add a new book button
 const addNewBookBtn = document.querySelector('.add-new-btn');
+
 // Modal container
 const modal = document.querySelector('#modal-container');
 // Class to hide modal
 modal.classList.add('hidden');
-// X button
-const exitBtn = document.querySelector('.x-btn');
+
+// Buttons
 // Add book button (Modal)
 const addBtn = document.querySelector('.add-btn');
+// X button
+const exitBtn = document.querySelector('.x-btn');
+
+// Card buttons
+// Mark as read button
+const readBtn = document.querySelector('.read-btn');
+// Remove card button
+const removeBtn = document.querySelector('.remove-btn');
+
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
+
 // Inputs
 const bookInput = document.querySelector('.book-input');
 const authorInput = document.querySelector('.author-input');
 const numberInput = document.querySelector('.number-input');
+
 // Card info
 const cardTitle = document.querySelector('.card-title');
 const cardUndertext = document.querySelector('.card-undertext');
@@ -60,10 +72,9 @@ addBtn.addEventListener('click', () => {
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
         const newCard = document.createElement('div');
         newCard.classList('.card');
-        cardTitle.innerHTML = newBook.title;
-        cardUndertext.innerHTML = newBook.author;
-        cardPages.innerHTML = newBook.pages;
         cardGrid.appendChild(newCard);
+        const node = document.createTextNode(`${newBook.title}`);
+        newCard.appendChild(node);
     }
 });
 
