@@ -5,7 +5,7 @@
 :root {
   /* Colors */
   --color-bg: #070f2b;
-  --color-sec: #D1D4C9;
+  --color-sec: #d1d4c9;
   --color-btn: #ff6500;
   --color-txt: white;
   --card-title: #070f2b;
@@ -53,8 +53,8 @@ body {
   opacity: 0.7;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
-    transform: translateY(-5px);
-    transition: 0.3s ease-in-out;
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
 }
 
 /* Cards grid */
@@ -80,14 +80,14 @@ body {
 }
 
 /* Card title, subs, pages */
-.card-info h2,
-.card-info h3,
-.card-info p {
+.card-title,
+.card-undertext,
+.card-pages {
   margin: 0;
   color: var(--card-title);
 }
 
-.card-info h3 {
+.card-title {
   font-style: italic;
   color: rgb(87, 87, 87);
 }
@@ -127,7 +127,7 @@ body {
   font-weight: 600;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 /* Modal */

@@ -30,9 +30,9 @@ const authorInput = document.querySelector('.author-input');
 const numberInput = document.querySelector('.number-input');
 
 // Card info
-// const cardTitle = document.querySelector('.card-title');
-// const cardUndertext = document.querySelector('.card-undertext');
-// const cardPages = document.querySelector('.card-pages');
+const cardTitle = document.querySelector('.card-title');
+const cardUndertext = document.querySelector('.card-undertext');
+const cardPages = document.querySelector('.card-pages');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
 
@@ -69,7 +69,12 @@ addBtn.addEventListener('click', (e) => {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
+        // Prevent form from submitting by default
         e.preventDefault();
+
+        // Hide modal after 'Add book' pressed
+        modal.classList.toggle('hidden');
+
         // Create new book
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
         // Create new card
