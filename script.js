@@ -15,12 +15,6 @@ const addBtn = document.querySelector('.add-btn');
 // X button
 const exitBtn = document.querySelector('.x-btn');
 
-// Card buttons
-// Mark as read button
-const readBtn = document.querySelector('.read-btn');
-// Remove card button
-const removeBtn = document.querySelector('.remove-btn');
-
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
 
@@ -35,6 +29,11 @@ const cardUndertext = document.querySelector('.card-undertext');
 const cardPages = document.querySelector('.card-pages');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
+// Card buttons
+// Mark as read button
+const readBtn = document.querySelector('.read-btn');
+// Remove card button
+const removeBtn = document.querySelector('.remove-btn');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
@@ -51,7 +50,6 @@ function addBookToLibrary(title, author, pages, hasRead) {
     myLibrary.push(newBook);
     return myLibrary;
 };
-
 
 // Open modal when Add button pressed
 addNewBookBtn.addEventListener('click', () => {
@@ -93,8 +91,15 @@ addBtn.addEventListener('click', (e) => {
         newPages.classList.add('card-pages');
         newPages.textContent = newBook.pages;
 
+        // Buttons
+        const newReadBtn = document.createElement('button');
+        newReadBtn.classList.add('read-btn');
+
+        const newRemoveBtn = document.createElement('button');
+        newRemoveBtn.classList.add('remove-btn');
+
         cardGrid.appendChild(newCard);
-        newCard.append(newTitle, newAuthor, newPages);
+        newCard.append(newTitle, newAuthor, newPages, newReadBtn, newRemoveBtn);
     }
 });
 
