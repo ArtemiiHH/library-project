@@ -1,5 +1,14 @@
 const myLibrary = ['book1', 'book2'];
 
+// To do:
+////////////////////////////////////////////////////////
+// Change marker color + teext when Mark as read pressed
+// Erase input values when modal is open again
+// Fix input validation
+// Fix book input length
+// Fix styles in general
+
+
 // DOM elements
 // Add a new book button
 const addNewBookBtn = document.querySelector('.add-new-btn');
