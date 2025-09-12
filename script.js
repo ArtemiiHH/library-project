@@ -94,14 +94,22 @@ addBtn.addEventListener('click', (e) => {
         newPages.textContent = `${newBook.pages} pages`;
 
         // Buttons
+        const newBtnGrid = document.createElement('div');
+        newBtnGrid.classList.add('card-buttons');
+        // New mark read button
         const newReadBtn = document.createElement('button');
         newReadBtn.classList.add('read-btn');
-
+        newReadBtn.textContent = 'Mark read';
+        // New remove button
         const newRemoveBtn = document.createElement('button');
         newRemoveBtn.classList.add('remove-btn');
+        newRemoveBtn.textContent = 'Remove';
 
+        // Append elements
         cardGrid.appendChild(newCard);
-        newCard.append(newTitle, newAuthor, newPages, newReadBtn, newRemoveBtn);
+        newCard.append(newTitle, newAuthor, newPages);
+        newCard.appendChild(newBtnGrid);
+        newBtnGrid.append(newReadBtn, newRemoveBtn);
     }
 });
 
