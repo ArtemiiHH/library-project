@@ -14,7 +14,6 @@ modal.classList.add('hidden');
 const addBtn = document.querySelector('.add-btn');
 // X button
 const exitBtn = document.querySelector('.x-btn');
-
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
 
@@ -23,19 +22,8 @@ const bookInput = document.querySelector('.book-input');
 const authorInput = document.querySelector('.author-input');
 const numberInput = document.querySelector('.number-input');
 
-// Card info
-const cardTitle = document.querySelector('.card-title');
-const cardUndertext = document.querySelector('.card-undertext');
-const cardPages = document.querySelector('.card-pages');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
-// Card buttons
-// Card buttons grid
-const cardBtnGrid = document.querySelector('.card-buttons');
-// Mark as read button
-const readBtn = document.querySelector('.read-btn');
-// Remove card button
-const removeBtn = document.querySelector('.remove-btn');
 
 // Book constructor function
 function Book(title, author, pages, hasRead) {
