@@ -64,12 +64,12 @@ exitBtn.addEventListener('click', () => {
 });
 
 // Add book button (Modal)
-addBtn.addEventListener('click', () => {
+addBtn.addEventListener('click', (e) => {
     if (bookInput.value === '' || authorInput.value === '' || numberInput.value === '') {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
-        addBookToLibrary();
+        e.preventDefault();
         // Create new book
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
         // Create new card
