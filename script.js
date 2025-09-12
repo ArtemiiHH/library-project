@@ -69,12 +69,13 @@ addBtn.addEventListener('click', () => {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
+        // Create new book
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
+        // Create new card
         const newCard = document.createElement('div');
         newCard.classList('.card');
+        
         cardGrid.appendChild(newCard);
-        const node = document.createTextNode(`${newBook.title}`);
-        newCard.appendChild(node);
     }
 });
 
