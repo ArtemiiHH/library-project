@@ -30,6 +30,8 @@ const cardPages = document.querySelector('.card-pages');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
 // Card buttons
+// Card buttons grid
+const cardBtnGrid = document.querySelector('.card-buttons');
 // Mark as read button
 const readBtn = document.querySelector('.read-btn');
 // Remove card button
@@ -89,7 +91,7 @@ addBtn.addEventListener('click', (e) => {
 
         const newPages = document.createElement('p');
         newPages.classList.add('card-pages');
-        newPages.textContent = newBook.pages;
+        newPages.textContent = `${newBook.pages} pages`;
 
         // Buttons
         const newReadBtn = document.createElement('button');
