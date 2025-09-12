@@ -78,6 +78,12 @@ addBtn.addEventListener('click', () => {
     }
 });
 
+// Remove book button
+removeBtn.addEventListener('click', () => {
+    const removedCard = document.querySelector('.card');
+    removedCard.remove();
+});
+
 // Close modal when Close pressed
 calcelBtn.addEventListener('click', () => {
     modal.classList.toggle('hidden');
