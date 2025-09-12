@@ -69,26 +69,27 @@ addBtn.addEventListener('click', () => {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
+        addBookToLibrary();
         // Create new book
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
         // Create new card
         const newCard = document.createElement('div');
-        newCard.classList('.card');
-        
+        newCard.classList.add('card');
+
         const newTitle = document.createElement('h2');
-        newTitle.classList('.card-title');
+        newTitle.classList.add('card-title');
         newTitle.textContent = newBook.title;
 
         const newAuthor = document.createElement('h3');
-        newAuthor.classList('.card-undertext');
+        newAuthor.classList.add('card-undertext');
         newAuthor.textContent = newBook.author;
 
         const newPages = document.createElement('p');
-        newPages.classList('.card-pages');
+        newPages.classList.add('card-pages');
         newPages.textContent = newBook.pages;
 
         cardGrid.appendChild(newCard);
-        newCard.appendChild(newTitle, newAuthor, newPages);
+        newCard.append(newTitle, newAuthor, newPages);
     }
 });
 
