@@ -35,9 +35,6 @@ function Book(title, author, pages, hasRead) {
 
 // Add book to library function
 function addBookToLibrary(title, author, pages, hasRead) {
-    bookInput.value = this.title;
-    authorInput.value = this.author;
-    numberInput.value = this.pages;
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
     return myLibrary;
@@ -60,12 +57,12 @@ addBtn.addEventListener('click', () => {
         alert('Enter your book information');
         modal.classList.remove('hidden');
     } else {
-        bookInput.value = this.title;
-        authorInput.value = this.author;
-        numberInput.value = this.pages;
-        const newBook = new Book(title, author, pages);
-        const newCard = document.createElement('card');
-        newCard = newBook;
+        const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
+        const newCard = document.createElement('div');
+        newCard.classList('.card');
+        cardTitle.innerHTML = newBook.title;
+        cardUndertext.innerHTML = newBook.author;
+        cardPages.innerHTML = newBook.pages;
         cardGrid.appendChild(newCard);
     }
 });
