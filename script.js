@@ -78,6 +78,10 @@ addBtn.addEventListener('click', (e) => {
         const newPages = document.createElement('p');
         newPages.classList.add('card-pages');
         newPages.textContent = `${newBook.pages} pages`;
+        // New read marker status
+        const newReadMarker = document.createElement('span');
+        newReadMarker.classList.add('read-status');
+        newReadMarker.textContent = 'Unread';
 
         // Buttons
         const newBtnGrid = document.createElement('div');
@@ -93,7 +97,7 @@ addBtn.addEventListener('click', (e) => {
 
         // Append elements
         cardGrid.appendChild(newCard);
-        newCard.append(newTitle, newAuthor, newPages);
+        newCard.append(newTitle, newAuthor, newPages, newReadMarker);
         newCard.appendChild(newBtnGrid);
         newBtnGrid.append(newReadBtn, newRemoveBtn);
 
