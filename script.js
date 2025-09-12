@@ -85,7 +85,7 @@ addBtn.addEventListener('click', (e) => {
         // New mark read button
         const newReadBtn = document.createElement('button');
         newReadBtn.classList.add('read-btn');
-        newReadBtn.textContent = 'Mark read';
+        newReadBtn.textContent = 'Mark as read';
         // New remove button
         const newRemoveBtn = document.createElement('button');
         newRemoveBtn.classList.add('remove-btn');
@@ -105,9 +105,10 @@ addBtn.addEventListener('click', (e) => {
 });
 
 // Remove book button
-cardGrid.addEventListener('click', () => {
-    const removedCard = document.querySelector('.card');
-    removedCard.remove();
+cardGrid.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+        e.target.closest('.card').remove();
+    }
 });
 
 // Close modal when Close pressed
