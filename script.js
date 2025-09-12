@@ -30,9 +30,9 @@ const authorInput = document.querySelector('.author-input');
 const numberInput = document.querySelector('.number-input');
 
 // Card info
-const cardTitle = document.querySelector('.card-title');
-const cardUndertext = document.querySelector('.card-undertext');
-const cardPages = document.querySelector('.card-pages');
+// const cardTitle = document.querySelector('.card-title');
+// const cardUndertext = document.querySelector('.card-undertext');
+// const cardPages = document.querySelector('.card-pages');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
 
@@ -75,7 +75,20 @@ addBtn.addEventListener('click', () => {
         const newCard = document.createElement('div');
         newCard.classList('.card');
         
+        const newTitle = document.createElement('h2');
+        newTitle.classList('.card-title');
+        newTitle.textContent = newBook.title;
+
+        const newAuthor = document.createElement('h3');
+        newAuthor.classList('.card-undertext');
+        newAuthor.textContent = newBook.author;
+
+        const newPages = document.createElement('p');
+        newPages.classList('.card-pages');
+        newPages.textContent = newBook.pages;
+
         cardGrid.appendChild(newCard);
+        newCard.appendChild(newTitle, newAuthor, newPages);
     }
 });
 
