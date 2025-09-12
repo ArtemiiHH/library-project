@@ -2,7 +2,7 @@ const myLibrary = ['book1', 'book2'];
 
 // To do:
 ////////////////////////////////////////////////////////
-// Change marker color + teext when Mark as read pressed
+// Change marker color + text when Mark as read pressed
 // Erase input values when modal is open again
 // Fix input validation
 // Fix book input length
@@ -25,6 +25,8 @@ const addBtn = document.querySelector('.add-btn');
 const exitBtn = document.querySelector('.x-btn');
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
+// Mark as read button
+const markAsReadBtn = document.querySelector('.read-btn');
 
 // Inputs
 const bookInput = document.querySelector('.book-input');
@@ -114,6 +116,21 @@ addBtn.addEventListener('click', (e) => {
         newRemoveBtn.addEventListener('click', () => {
             newCard.remove();
         });
+    }
+});
+
+// Mark as read button
+markAsReadBtn.addEventListener('click', () => {
+    // Read marker
+    const readMarker = document.querySelector('.read-status');
+    if (readMarker.textContent === 'Unread') {
+        readMarker.textContent = 'Read';
+        readMarker.style.backgroundColor = 'blue';
+        return;
+    } else if (readMarker.textContent === 'Read') {
+        readMarker.textContent === '';
+        readMarker.style.backgroundColor = '';
+        return;
     }
 });
 
