@@ -2,7 +2,6 @@ const myLibrary = ['book1', 'book2'];
 
 // To do:
 ////////////////////////////////////////////////////////
-// Change marker color + text when Mark as read pressed
 // Erase input values when modal is open again
 // Fix input validation
 // Fix book input length
@@ -125,18 +124,24 @@ cardGrid.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
         e.target.closest('.card').remove();
     }
-// Mark as read button
+    // Mark as read button
     if (e.target.classList.contains('read-btn')) {
         // Find status marker from card parent
         let findMakrer = e.target.closest('.card').querySelector('.read-status');
+        // Find Mark as read button from card parent
+        let findMarkAsReadBtn = e.target.closest('.card').querySelector('.read-btn');
 
         // Switch markers color and text content
         if (findMakrer.textContent === 'Unread') {
             findMakrer.style.backgroundColor = '#A149FA';
             findMakrer.textContent = 'Read';
+            // Change Mark as read text content
+            findMarkAsReadBtn.textContent = 'Mark as unread';
         } else if (findMakrer.textContent === 'Read') {
             findMakrer.style.backgroundColor = '';
             findMakrer.textContent = 'Unread';
+            // Change Mark as read text content
+            findMarkAsReadBtn.textContent = 'Mark as read';
         }
     }
 });
