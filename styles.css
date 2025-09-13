@@ -26,25 +26,27 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 /* Title */
 h1 {
-    font-size: 3rem;
-    font-weight: 500;
-    margin: 0;
-    padding: 40px 40px 0 40px;
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 40px 40px 0 40px;
 }
 
-#container>h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 0;
+/* Title undertext */
+#container > h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
 }
 
 /* Add a new book button */
 .add-new-btn {
+  margin-top: 70px;
   padding: 16px 32px;
   background-color: var(--color-btn);
   border: none;
