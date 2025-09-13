@@ -51,14 +51,24 @@ function addBookToLibrary(title, author, pages, hasRead) {
     return myLibrary;
 };
 
+// Open modal
+function openModal() {
+    modal.classList.remove('hidden');
+};
+
+// Hide modal
+function hideModal() {
+    modal.classList.toggle('hidden');
+};
+
 // Open modal when Add button pressed
 addNewBookBtn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
+    openModal();
 });
 
 // Close modal when X pressed
 exitBtn.addEventListener('click', () => {
-    modal.classList.toggle('hidden');
+    hideModal();
 });
 
 // Add book button (Modal)
@@ -71,7 +81,7 @@ addBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
         // Hide modal after 'Add book' pressed
-        modal.classList.toggle('hidden');
+        hideModal();
 
         // Create new book Constructor
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
@@ -150,5 +160,5 @@ cardGrid.addEventListener('click', (e) => {
 
 // Close modal when Close pressed
 calcelBtn.addEventListener('click', () => {
-    modal.classList.toggle('hidden');
+    hideModal();
 });
