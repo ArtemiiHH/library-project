@@ -1,30 +1,22 @@
-const myLibrary = ['book1', 'book2'];
-
-// To do:
-////////////////////////////////////////////////////////
-// Fix input validation
-// Fix book input length
-// Fix styles in general
+const myLibrary = [];
 
 
-// DOM elements
+
 // Add a new book button
 const addNewBookBtn = document.querySelector('.add-new-btn');
 
 // Modal container
 const modal = document.querySelector('#modal-container');
-// Class to hide modal
 modal.classList.add('hidden');
 
 // Buttons
+
 // Add book button (Modal)
 const addBtn = document.querySelector('.add-btn');
 // X button
 const exitBtn = document.querySelector('.x-btn');
 // Cancel button
 const calcelBtn = document.querySelector('.close-btn');
-// Mark as read button
-const markAsReadBtn = document.querySelector('.read-btn');
 
 // Inputs
 const bookInput = document.querySelector('.book-input');
@@ -34,7 +26,7 @@ const numberInput = document.querySelector('.number-input');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
 
-// Book constructor function
+// Book constructor
 function Book(title, author, pages, hasRead) {
     this.id = crypto.randomUUID();
     this.title = title;
@@ -70,22 +62,22 @@ function hideModal() {
 
 
 // Create card
-function createCard() {
+function createCard(book) {
 
     const card = document.createElement('div');
     card.classList.add('card');
 
     const title = document.createElement('h2');
     title.classList.add('card-title');
-    title.textContent = newBook.title;
+    title.textContent = book.title;
 
     const author = document.createElement('h3');
     author.classList.add('card-undertext');
-    author.textContent = newBook.author;
+    author.textContent = book.author;
 
     const pages = document.createElement('p');
     pages.classList.add('card-pages');
-    pages.textContent = `${newBook.pages} pages`;
+    pages.textContent = `${book.pages} pages`;
 
     const readStatus = document.createElement('span');
     readStatus.classList.add('read-status');
@@ -110,6 +102,26 @@ function createCard() {
 
 
 
+// Toggle read status
+function toggleReadStatus(card) {
+    const status = card.querySelector('.read-status');
+    const button = card.querySelector('.read-btn');
+
+    const isUnread = status.textContent === 'Unread';
+    status.textContent = isUnread ? 'Read' : 'Unread';
+    status.style.backgroundColor = isUnread ? '#A149FA' : '';
+    button.textContent = isUnread ? 'Mark as unread' : 'Mark as read';
+};
+
+
+
+// Validate inputs
+function validateInputs() {
+    return bookInput.value && authorInput.value && numberInput.value;
+};
+
+
+
 // Buttons
 
 // 'Add new book' button
@@ -124,42 +136,34 @@ exitBtn.addEventListener('click', () => {
 
 // 'Add book' button (Modal)
 addBtn.addEventListener('click', () => {
+    if (!validateInputs()) {
+        alert('Enter you book information');
+        openModal();
+        return;
+    }
+
     const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
 
     const newCard = createCard(newBook);
 
     cardGrid.appendChild(newCard);
 
+    addBookToLibrary();
+
     hideModal();
 });
 
 // Card buttons (Mark as read, Remove)
 cardGrid.addEventListener('click', (e) => {
-    let targetCard = e.target.closest('.card');
 
-    // Remove card when button pressed
+    // Remove card
     if (e.target.classList.contains('remove-btn')) {
-        targetCard.remove();
+        e.target.closest('.card').remove();
     }
-    // Mark as read button
-    if (e.target.classList.contains('read-btn')) {
-        // Find status marker from card parent
-        let findMarker = targetCard.querySelector('.read-status');
-        // Find Mark as read button from card parent
-        let findMarkAsReadBtn = targetCard.querySelector('.read-btn');
 
-        // Switch markers color and text content
-        if (findMarker.textContent === 'Unread') {
-            findMarker.style.backgroundColor = '#A149FA';
-            findMarker.textContent = 'Read';
-            // Change Mark as read text content
-            findMarkAsReadBtn.textContent = 'Mark as unread';
-        } else if (findMarker.textContent === 'Read') {
-            findMarker.style.backgroundColor = '';
-            findMarker.textContent = 'Unread';
-            // Change Mark as read text content
-            findMarkAsReadBtn.textContent = 'Mark as read';
-        }
+    // Toggle read status
+    if (e.target.classList.contains('read-btn')) {
+        toggleReadStatus(e.target.closest('.card'));
     }
 });
 
