@@ -72,7 +72,7 @@ body {
   justify-content: space-between;
   background-color: var(--color-sec);
   height: 200px;
-  width: 350px;
+  width: auto;
   border-radius: 20px;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -101,11 +101,13 @@ body {
 .card-buttons {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .read-btn,
 .remove-btn {
-  padding: 13px 32px;
+  width: 150px;
+  height: 50px;
   background-color: var(--color-btn);
   border: none;
   border-radius: 30px;
@@ -118,7 +120,8 @@ body {
 
 .read-btn:hover,
 .remove-btn:hover {
-  padding: 13px 32px;
+  width: 150px;
+  height: 50px;
   background-color: var(--color-btn);
   border: none;
   border-radius: 30px;
@@ -131,10 +134,10 @@ body {
 }
 
 .read-status {
-    background-color: var(--color-bg);
-    align-self: start;
-    padding: 8px 20px;
-    border-radius: 20px;
+  background-color: var(--color-bg);
+  align-self: start;
+  padding: 8px 20px;
+  border-radius: 20px;
 }
 
 /* Modal */
