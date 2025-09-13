@@ -2,7 +2,6 @@ const myLibrary = ['book1', 'book2'];
 
 // To do:
 ////////////////////////////////////////////////////////
-// Erase input values when modal is open again
 // Fix input validation
 // Fix book input length
 // Fix styles in general
@@ -70,6 +69,47 @@ function hideModal() {
 
 
 
+// Create card
+function createCard() {
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const title = document.createElement('h2');
+    title.classList.add('card-title');
+    title.textContent = newBook.title;
+
+    const author = document.createElement('h3');
+    author.classList.add('card-undertext');
+    author.textContent = newBook.author;
+
+    const pages = document.createElement('p');
+    pages.classList.add('card-pages');
+    pages.textContent = `${newBook.pages} pages`;
+
+    const readStatus = document.createElement('span');
+    readStatus.classList.add('read-status');
+    readStatus.textContent = 'Unread';
+
+    const btnGrid = document.createElement('div');
+    btnGrid.classList.add('card-buttons');
+
+    const markBtn = document.createElement('button');
+    markBtn.classList.add('read-btn');
+    markBtn.textContent = 'Mark as read';
+
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-btn');
+    removeBtn.textContent = 'Remove';
+
+    btnGrid.append(markBtn, removeBtn);
+    card.append(title, author, pages, readStatus, btnGrid);
+
+    return card;
+};
+
+
+
 // Buttons
 
 // 'Add new book' button
@@ -82,64 +122,18 @@ exitBtn.addEventListener('click', () => {
     hideModal();
 });
 
-// Add book button (Modal)
-addBtn.addEventListener('click', (e) => {
-    if (bookInput.value === '' || authorInput.value === '' || numberInput.value === '') {
-        alert('Enter your book information');
-        modal.classList.remove('hidden');
-    } else {
-        // Prevent form from submitting by default
-        e.preventDefault();
+// 'Add book' button (Modal)
+addBtn.addEventListener('click', () => {
+    const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
 
-        // Create new book Constructor
-        const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
+    const newCard = createCard(newBook);
 
-        // Create new card
-        const newCard = document.createElement('div');
-        newCard.classList.add('card');
-        const newTitle = document.createElement('h2');
-        newTitle.classList.add('card-title');
-        newTitle.textContent = newBook.title;
-        const newAuthor = document.createElement('h3');
-        newAuthor.classList.add('card-undertext');
-        newAuthor.textContent = newBook.author;
-        const newPages = document.createElement('p');
-        newPages.classList.add('card-pages');
-        newPages.textContent = `${newBook.pages} pages`;
-        // New read marker status
-        const newReadMarker = document.createElement('span');
-        newReadMarker.classList.add('read-status');
-        newReadMarker.textContent = 'Unread';
+    cardGrid.appendChild(newCard);
 
-        // Buttons
-        const newBtnGrid = document.createElement('div');
-        newBtnGrid.classList.add('card-buttons');
-        // New mark read button
-        const newReadBtn = document.createElement('button');
-        newReadBtn.classList.add('read-btn');
-        newReadBtn.textContent = 'Mark as read';
-        // New remove button
-        const newRemoveBtn = document.createElement('button');
-        newRemoveBtn.classList.add('remove-btn');
-        newRemoveBtn.textContent = 'Remove';
-
-        // Append elements
-        cardGrid.appendChild(newCard);
-        newCard.append(newTitle, newAuthor, newPages, newReadMarker);
-        newCard.appendChild(newBtnGrid);
-        newBtnGrid.append(newReadBtn, newRemoveBtn);
-
-        // Remove button on new cards
-        newRemoveBtn.addEventListener('click', () => {
-            newCard.remove();
-        });
-
-        // Hide modal after 'Add book' pressed
-        hideModal();
-    }
+    hideModal();
 });
 
-// Card buttons logic
+// Card buttons (Mark as read, Remove)
 cardGrid.addEventListener('click', (e) => {
     let targetCard = e.target.closest('.card');
 
@@ -169,7 +163,7 @@ cardGrid.addEventListener('click', (e) => {
     }
 });
 
-// Close modal when Close pressed
+// Cancel button
 calcelBtn.addEventListener('click', () => {
     hideModal();
 });
