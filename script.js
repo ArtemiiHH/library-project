@@ -119,21 +119,6 @@ addBtn.addEventListener('click', (e) => {
     }
 });
 
-// Mark as read button
-markAsReadBtn.addEventListener('click', () => {
-    // Read marker
-    const readMarker = document.querySelector('.read-status');
-    if (readMarker.textContent === 'Unread') {
-        readMarker.textContent = 'Read';
-        readMarker.style.backgroundColor = 'blue';
-        return;
-    } else if (readMarker.textContent === 'Read') {
-        readMarker.textContent === '';
-        readMarker.style.backgroundColor = '';
-        return;
-    }
-});
-
 // Remove book button
 cardGrid.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
