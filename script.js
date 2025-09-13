@@ -123,6 +123,10 @@ addBtn.addEventListener('click', (e) => {
 cardGrid.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
         e.target.closest('.card').remove();
+    } else if (e.target.classList.contains('read-btn')) {
+        let findMakrer = e.target.closest('.card').querySelector('.read-status');
+        findMakrer.style.backgroundColor = '#A149FA';
+        findMakrer.textContent = 'Read';
     }
 });
 
