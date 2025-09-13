@@ -10,7 +10,6 @@ const modal = document.querySelector('#modal-container');
 modal.classList.add('hidden');
 
 // Buttons
-
 // Add book button (Modal)
 const addBtn = document.querySelector('.add-btn');
 // X button
@@ -66,6 +65,9 @@ function createCard(book) {
     const card = document.createElement('div');
     card.classList.add('card');
 
+    const cardInfoGrid = document.createElement('div');
+    cardInfoGrid.classList.add('.card-info');
+
     const title = document.createElement('h2');
     title.classList.add('card-title');
     title.textContent = book.title;
@@ -94,7 +96,7 @@ function createCard(book) {
     removeBtn.textContent = 'Remove';
 
     btnGrid.append(markBtn, removeBtn);
-    card.append(title, author, pages, readStatus, btnGrid);
+    card.append(title, author, pages, readStatus, cardInfoGrid, btnGrid);
 
     return card;
 };
