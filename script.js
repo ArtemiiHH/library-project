@@ -51,6 +51,10 @@ function addBookToLibrary(title, author, pages, hasRead) {
     return myLibrary;
 };
 
+
+
+// Modal
+
 // Open modal
 function openModal() {
     modal.classList.remove('hidden');
@@ -59,14 +63,21 @@ function openModal() {
 // Hide modal
 function hideModal() {
     modal.classList.toggle('hidden');
+    bookInput.value = '';
+    authorInput.value = '';
+    numberInput.value = '';
 };
 
-// Open modal when Add button pressed
+
+
+// Buttons
+
+// 'Add new book' button
 addNewBookBtn.addEventListener('click', () => {
     openModal();
 });
 
-// Close modal when X pressed
+// X button
 exitBtn.addEventListener('click', () => {
     hideModal();
 });
@@ -79,9 +90,6 @@ addBtn.addEventListener('click', (e) => {
     } else {
         // Prevent form from submitting by default
         e.preventDefault();
-
-        // Hide modal after 'Add book' pressed
-        hideModal();
 
         // Create new book Constructor
         const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
@@ -125,6 +133,9 @@ addBtn.addEventListener('click', (e) => {
         newRemoveBtn.addEventListener('click', () => {
             newCard.remove();
         });
+
+        // Hide modal after 'Add book' pressed
+        hideModal();
     }
 });
 
