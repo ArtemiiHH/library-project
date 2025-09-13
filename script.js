@@ -45,7 +45,6 @@ function addBookToLibrary(title, author, pages, hasRead) {
 
 
 // Modal
-
 // Open modal
 function openModal() {
     modal.classList.remove('hidden');
@@ -123,7 +122,6 @@ function validateInputs() {
 
 
 // Buttons
-
 // 'Add new book' button
 addNewBookBtn.addEventListener('click', () => {
     openModal();
