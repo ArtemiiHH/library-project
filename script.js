@@ -121,12 +121,23 @@ addBtn.addEventListener('click', (e) => {
 
 // Remove book button
 cardGrid.addEventListener('click', (e) => {
+    // Remove button
     if (e.target.classList.contains('remove-btn')) {
         e.target.closest('.card').remove();
-    } else if (e.target.classList.contains('read-btn')) {
+    }
+// Mark as read button
+    if (e.target.classList.contains('read-btn')) {
+        // Find status marker from card parent
         let findMakrer = e.target.closest('.card').querySelector('.read-status');
-        findMakrer.style.backgroundColor = '#A149FA';
-        findMakrer.textContent = 'Read';
+
+        // Switch markers color and text content
+        if (findMakrer.textContent === 'Unread') {
+            findMakrer.style.backgroundColor = '#A149FA';
+            findMakrer.textContent = 'Read';
+        } else if (findMakrer.textContent === 'Read') {
+            findMakrer.style.backgroundColor = '';
+            findMakrer.textContent = 'Unread';
+        }
     }
 });
 
