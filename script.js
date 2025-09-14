@@ -38,7 +38,7 @@ function Book(title, author, pages, hasRead) {
 function addBookToLibrary(title, author, pages, hasRead) {
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
-    return myLibrary;
+    return newBook;
 };
 
 
@@ -66,7 +66,7 @@ function createCard(book) {
     card.classList.add('card');
 
     const cardInfoGrid = document.createElement('div');
-    cardInfoGrid.classList.add('.card-info');
+    cardInfoGrid.classList.add('card-info');
 
     const title = document.createElement('h2');
     title.classList.add('card-title');
@@ -142,13 +142,16 @@ addBtn.addEventListener('click', () => {
         return;
     }
 
-    const newBook = new Book(bookInput.value, authorInput.value, numberInput.value);
+    const newBook = addBookToLibrary(
+        bookInput.value,
+        authorInput.value,
+        numberInput.value,
+        false
+    );
 
     const newCard = createCard(newBook);
 
     cardGrid.appendChild(newCard);
-
-    addBookToLibrary();
 
     hideModal();
 });
