@@ -1,7 +1,5 @@
+// Array to store books
 const myLibrary = [];
-
-const index = myLibrary.findIndex(book => book.id === id);
-if (index !== -1) myLibrary.splice(index, 1);
 
 
 
@@ -170,6 +168,7 @@ cardGrid.addEventListener('click', (e) => {
         const card = e.target.closest('.card');
         const id = card.dataset.id;
 
+        // Remove card info from array
         const index = myLibrary.findIndex(book => book.id === id);
         if (index !== -1) myLibrary.splice(index, 1);
 
