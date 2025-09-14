@@ -1,5 +1,8 @@
 const myLibrary = [];
 
+const index = myLibrary.findIndex(book => book.id === id);
+if (index !== -1) myLibrary.splice(index, 1);
+
 
 
 // Add a new book button
@@ -38,6 +41,7 @@ function Book(title, author, pages, hasRead) {
 function addBookToLibrary(title, author, pages, hasRead) {
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
+    console.log(myLibrary);
     return newBook;
 };
 
@@ -67,6 +71,8 @@ function createCard(book) {
 
     const cardInfoGrid = document.createElement('div');
     cardInfoGrid.classList.add('card-info');
+
+    card.dataset.id = book.id;
 
     const title = document.createElement('h2');
     title.classList.add('card-title');
@@ -159,9 +165,16 @@ addBtn.addEventListener('click', () => {
 // Card buttons (Mark as read, Remove)
 cardGrid.addEventListener('click', (e) => {
 
-    // Remove card
+    // Remove card from DOM
     if (e.target.classList.contains('remove-btn')) {
-        e.target.closest('.card').remove();
+        const card = e.target.closest('.card');
+        const id = card.dataset.id;
+
+        const index = myLibrary.findIndex(book => book.id === id);
+        if (index !== -1) myLibrary.splice(index, 1);
+
+        card.remove();
+        console.log(myLibrary);
     }
 
     // Toggle read status
