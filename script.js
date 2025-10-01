@@ -46,12 +46,21 @@ class Book {
 }
 
 // Add book to library function
-function addBookToLibrary(title, author, pages, hasRead) {
-    const newBook = new Book(title, author, pages, hasRead);
-    myLibrary.push(newBook);
-    console.log(myLibrary);
-    return newBook;
-};
+// function addBookToLibrary(title, author, pages, hasRead) {
+//     const newBook = new Book(title, author, pages, hasRead);
+//     myLibrary.push(newBook);
+//     console.log(myLibrary);
+//     return newBook;
+// };
+
+class addBookToLibrary {
+    constructor(title, author, pages, hasRead) {
+        const newBook = new Book(title, author, pages, hasRead);
+        myLibrary.push(newBook);
+        console.log(myLibrary);
+        return newBook;
+    }
+}
 
 
 
