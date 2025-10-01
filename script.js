@@ -6,9 +6,12 @@ const myLibrary = [];
 // Add a new book button
 const addNewBookBtn = document.querySelector('.add-new-btn');
 
-// Modal container
-const modal = document.querySelector('#modal-container');
-modal.classList.add('hidden');
+// Grab the DOM element once
+const modalElement = document.querySelector('#modal-container');
+modalElement.classList.add('hidden');
+
+// Create a class instance with that element
+const modal = new OpenModal(modalElement);
 
 // Buttons
 // Add book button (Modal)
@@ -75,8 +78,8 @@ class OpenModal {
         this.modal = modal;
     }
 
-    modal() {
-        modal.classList.remove('hidden');
+    open() {
+        this.modal.classList.remove('hidden');
     }
 }
 
@@ -159,7 +162,7 @@ function validateInputs() {
 // Buttons
 // 'Add new book' button
 addNewBookBtn.addEventListener('click', () => {
-    openModal();
+    modal.open();
 });
 
 // X button
