@@ -38,14 +38,7 @@ class Book {
 }
 
 
-
-// function addBookToLibrary(title, author, pages, hasRead) {
-//     const newBook = new Book(title, author, pages, hasRead);
-//     myLibrary.push(newBook);
-//     console.log(myLibrary);
-//     return newBook;
-// };
-
+// Library class
 class Library {
     constructor() {
         this.books = [];
@@ -59,24 +52,34 @@ class Library {
 }
 
 
-
-class OpenModal {
-    constructor(modal) {
+// Modal class
+class Modal {
+    constructor(modal, bookInput, authorInput, numberInput) {
         this.modal = modal;
+        this.bookInput = bookInput;
+        this.authorInput = authorInput;
+        this.numberInput = numberInput;
     }
 
     open() {
         this.modal.classList.remove('hidden');
     }
+
+    close() {
+        this.modal.classList.toggle('hidden');
+        this.bookInput.value = '';
+        this.authorInput.value = '';
+        this.numberInput.value = '';
+    }
 }
 
 // Hide modal
-function hideModal() {
-    modal.classList.toggle('hidden');
-    bookInput.value = '';
-    authorInput.value = '';
-    numberInput.value = '';
-};
+// function hideModal() {
+//     modal.classList.toggle('hidden');
+//     bookInput.value = '';
+//     authorInput.value = '';
+//     numberInput.value = '';
+// };
 
 
 
