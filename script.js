@@ -53,7 +53,7 @@ class Book {
 //     return newBook;
 // };
 
-class addBookToLibrary {
+class AddBookToLibrary {
     constructor(title, author, pages, hasRead) {
         const newBook = new Book(title, author, pages, hasRead);
         myLibrary.push(newBook);
@@ -66,9 +66,19 @@ class addBookToLibrary {
 
 // Modal
 // Open modal
-function openModal() {
-    modal.classList.remove('hidden');
-};
+// function openModal() {
+//     modal.classList.remove('hidden');
+// };
+
+class OpenModal {
+    constructor(modal) {
+        this.modal = modal;
+    }
+
+    modal() {
+        modal.classList.remove('hidden');
+    }
+}
 
 // Hide modal
 function hideModal() {
