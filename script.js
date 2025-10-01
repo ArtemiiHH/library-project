@@ -1,8 +1,3 @@
-// Array to store books
-const myLibrary = [];
-
-
-
 // Add a new book button
 const addNewBookBtn = document.querySelector('.add-new-btn');
 
@@ -29,15 +24,9 @@ const numberInput = document.querySelector('.number-input');
 // Card grid
 const cardGrid = document.querySelector('.card-grid');
 
-// Book constructor
-// function Book(title, author, pages, hasRead) {
-//     this.id = crypto.randomUUID();
-//     this.title = title;
-//     this.author = author;
-//     this.pages = pages;
-//     this.hasRead = hasRead;
-// };
 
+
+// Book class
 class Book {
     constructor(title, author, pages, hasRead) {
         this.id = crypto.randomUUID();
@@ -48,13 +37,26 @@ class Book {
     }
 }
 
-// Add book to library function
-function addBookToLibrary(title, author, pages, hasRead) {
-    const newBook = new Book(title, author, pages, hasRead);
-    myLibrary.push(newBook);
-    console.log(myLibrary);
-    return newBook;
-};
+
+
+// function addBookToLibrary(title, author, pages, hasRead) {
+//     const newBook = new Book(title, author, pages, hasRead);
+//     myLibrary.push(newBook);
+//     console.log(myLibrary);
+//     return newBook;
+// };
+
+class Library {
+    constructor() {
+        this.books = [];
+    }
+
+    addBook(title, author, pages, hasRead) {
+        const newBook = new Book(title, author, pages, hasRead);
+        this.books.push(newBook);
+        return newBook;
+    }
+}
 
 
 
