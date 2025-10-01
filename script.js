@@ -27,13 +27,23 @@ const numberInput = document.querySelector('.number-input');
 const cardGrid = document.querySelector('.card-grid');
 
 // Book constructor
-function Book(title, author, pages, hasRead) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
-};
+// function Book(title, author, pages, hasRead) {
+//     this.id = crypto.randomUUID();
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.hasRead = hasRead;
+// };
+
+class Book {
+    constructor(title, author, pages, hasRead) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
+    }
+}
 
 // Add book to library function
 function addBookToLibrary(title, author, pages, hasRead) {
