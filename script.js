@@ -21,6 +21,8 @@ const numberInput = document.querySelector(".number-input");
 // Card grid
 const cardGrid = document.querySelector(".card-grid");
 
+
+
 // Book class
 class Book {
   constructor(title, author, pages, hasRead) {
@@ -31,6 +33,8 @@ class Book {
     this.hasRead = hasRead;
   }
 }
+
+
 
 // Library class
 class Library {
@@ -45,6 +49,8 @@ class Library {
   }
 }
 const myLibrary = new Library();
+
+
 
 // Modal class
 class Modal {
@@ -68,6 +74,15 @@ class Modal {
 }
 // Create a class instance with that element
 const modal = new Modal(modalElement, bookInput, authorInput, numberInput);
+
+
+
+class Card {
+    constructor(book, library) {
+        this.book = book;
+        this.library = library;
+    }
+}
 
 // Create card
 function createCard(book) {
