@@ -162,7 +162,7 @@ addBtn.addEventListener('click', () => {
         return;
     }
 
-    const newBook = addBookToLibrary(
+    const newBook = myLibrary.addBook(
         bookInput.value,
         authorInput.value,
         numberInput.value,
