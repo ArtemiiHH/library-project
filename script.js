@@ -14,7 +14,7 @@ const addBtn = document.querySelector('.add-btn');
 // X button
 const exitBtn = document.querySelector('.x-btn');
 // Cancel button
-const calcelBtn = document.querySelector('.close-btn');
+const cancelBtn = document.querySelector('.close-btn');
 
 // Inputs
 const bookInput = document.querySelector('.book-input');
@@ -50,6 +50,8 @@ class Library {
         return newBook;
     }
 }
+const myLibrary = new Library();
+
 
 
 // Modal class
@@ -197,6 +199,6 @@ cardGrid.addEventListener('click', (e) => {
 });
 
 // Cancel button
-calcelBtn.addEventListener('click', () => {
+cancelBtn.addEventListener('click', () => {
     modal.close();
 });
