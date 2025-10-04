@@ -73,14 +73,6 @@ class Modal {
     }
 }
 
-// Hide modal
-// function hideModal() {
-//     modal.classList.toggle('hidden');
-//     bookInput.value = '';
-//     authorInput.value = '';
-//     numberInput.value = '';
-// };
-
 
 
 // Create card
