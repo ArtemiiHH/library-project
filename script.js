@@ -130,14 +130,10 @@ function validateInputs() {
 
 // Buttons
 // 'Add new book' button
-addNewBookBtn.addEventListener("click", () => {
-  modal.open();
-});
+addNewBookBtn.addEventListener("click", () => modal.open());
 
 // X button
-exitBtn.addEventListener("click", () => {
-  modal.close();
-});
+exitBtn.addEventListener("click", () => modal.close());
 
 // 'Add book' button (Modal)
 addBtn.addEventListener("click", () => {
@@ -183,6 +179,4 @@ cardGrid.addEventListener("click", (e) => {
 });
 
 // Cancel button
-cancelBtn.addEventListener("click", () => {
-  modal.close();
-});
+cancelBtn.addEventListener("click", () => modal.close());
