@@ -6,7 +6,7 @@ const modalElement = document.querySelector('#modal-container');
 modalElement.classList.add('hidden');
 
 // Create a class instance with that element
-const modal = new OpenModal(modalElement);
+const modal = new Modal(modalElement);
 
 // Buttons
 // Add book button (Modal)
@@ -149,14 +149,14 @@ addNewBookBtn.addEventListener('click', () => {
 
 // X button
 exitBtn.addEventListener('click', () => {
-    hideModal();
+    modal.close();
 });
 
 // 'Add book' button (Modal)
 addBtn.addEventListener('click', () => {
     if (!validateInputs()) {
         alert('Enter you book information');
-        openModal();
+        modal.open();
         return;
     }
 
@@ -171,7 +171,7 @@ addBtn.addEventListener('click', () => {
 
     cardGrid.appendChild(newCard);
 
-    hideModal();
+    modal.close();
 });
 
 // Card buttons (Mark as read, Remove)
@@ -198,5 +198,5 @@ cardGrid.addEventListener('click', (e) => {
 
 // Cancel button
 calcelBtn.addEventListener('click', () => {
-    hideModal();
+    modal.close();
 });
