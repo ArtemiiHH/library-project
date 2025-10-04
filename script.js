@@ -5,9 +5,6 @@ const addNewBookBtn = document.querySelector('.add-new-btn');
 const modalElement = document.querySelector('#modal-container');
 modalElement.classList.add('hidden');
 
-// Create a class instance with that element
-const modal = new Modal(modalElement);
-
 // Buttons
 // Add book button (Modal)
 const addBtn = document.querySelector('.add-btn');
@@ -74,6 +71,8 @@ class Modal {
         this.numberInput.value = '';
     }
 }
+// Create a class instance with that element
+const modal = new Modal(modalElement, bookInput, authorInput, numberInput);
 
 
 
