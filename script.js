@@ -77,13 +77,6 @@ const modal = new Modal(modalElement, bookInput, authorInput, numberInput);
 
 
 
-class Card {
-    constructor(book, library) {
-        this.book = book;
-        this.library = library;
-    }
-}
-
 // Create card
 function createCard(book) {
   const card = document.createElement("div");
@@ -127,6 +120,8 @@ function createCard(book) {
   return card;
 }
 
+
+
 // Toggle read status
 function toggleReadStatus(card) {
   const status = card.querySelector(".read-status");
@@ -138,10 +133,14 @@ function toggleReadStatus(card) {
   button.textContent = isUnread ? "Mark as unread" : "Mark as read";
 }
 
+
+
 // Validate inputs
 function validateInputs() {
   return bookInput.value && authorInput.value && numberInput.value;
 }
+
+
 
 // Buttons
 // 'Add new book' button
