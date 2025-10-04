@@ -68,7 +68,7 @@ class Modal {
     }
 
     close() {
-        this.modal.classList.toggle('hidden');
+        this.modal.classList.add('hidden');
         this.bookInput.value = '';
         this.authorInput.value = '';
         this.numberInput.value = '';
@@ -185,8 +185,8 @@ cardGrid.addEventListener('click', (e) => {
         const id = card.dataset.id;
 
         // Remove card info from array
-        const index = myLibrary.findIndex(book => book.id === id);
-        if (index !== -1) myLibrary.splice(index, 1);
+        const index = myLibrary.books.findIndex(book => book.id === id);
+        if (index !== -1) myLibrary.books.splice(index, 1);
 
         card.remove();
         console.log(myLibrary);
